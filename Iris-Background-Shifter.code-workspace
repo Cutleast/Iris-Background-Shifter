@@ -1,0 +1,70 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"njpwerner.autodocstring",
+			"ms-python.vscode-pylance",
+			"ms-python.python",
+			"ms-python.debugpy",
+			"charliermarsh.ruff",
+		]
+	},
+	"settings": {
+		"editor.formatOnSave": true,
+		"[python]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports.ruff": "explicit",
+			},
+		},
+		"python.testing.pytestArgs": [
+			"-vv"
+		],
+		"python.testing.pytestEnabled": true,
+		"python.testing.unittestEnabled": false,
+		"python.analysis.autoFormatStrings": true,
+		"python.analysis.autoImportCompletions": true,
+		"python.analysis.diagnosticMode": "workspace",
+		"python.analysis.generateWithTypeAnnotation": true,
+		"python.analysis.languageServerMode": "full",
+		"git.diagnosticsCommitHook.Enabled": true,
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "build",
+				"type": "shell",
+				"command": "${workspaceFolder}/build.bat",
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				},
+				"detail": "Builds Iris with nuitka in ./main.dist"
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "debugpy",
+				"request": "launch",
+				"name": "Debug Iris",
+				"program": "${workspaceFolder}/src/main.py",
+				"cwd": "${workspaceFolder}",
+				"preLaunchTask": "compile-qrc"
+			},
+			{
+				"type": "debugpy",
+				"request": "launch",
+				"name": "Debug current file",
+				"program": "${file}",
+				"cwd": "${workspaceFolder}",
+			}
+		]
+	}
+}
