@@ -1,6 +1,6 @@
 [project]
 name = "iris-background-shifter"
-version = "0.0.1"
+version = "0.0.2"
 description = "Iris Background Shifter"
 authors = [{ name = "Cutleast", email = "cutleast@gmail.com" }]
 readme = "README.md"
