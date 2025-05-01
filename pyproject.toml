@@ -8,7 +8,7 @@ requires-python = ">=3.12"
 dependencies = ["jstyleson", "psutil", "pydantic"]
 
 [dependency-groups]
-dev = ["nuitka", "pyfakefs", "pyright", "pytest"]
+dev = ["nuitka", "pyfakefs", "pyright", "pytest", "ruff"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
