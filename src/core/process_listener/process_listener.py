@@ -138,4 +138,14 @@ class ProcessListener:
             list[str]: List of running processes
         """
 
-        return [process.name() for process in psutil.process_iter()]
+        process_names: list[str] = []
+
+        for process in psutil.process_iter():
+            try:
+                process_names.append(process.name())
+            except Exception as ex:
+                ProcessListener.log.error(
+                    f"Failed to get process name: {str(ex)}", exc_info=ex
+                )
+
+        return process_names
