@@ -5,10 +5,10 @@ description = "Iris Background Shifter"
 authors = [{ name = "Cutleast", email = "cutleast@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["jstyleson", "psutil", "pydantic", "semantic-version"]
+dependencies = ["jstyleson", "psutil", "pydantic"]
 
 [dependency-groups]
-dev = ["nuitka", "pyfakefs", "pyright", "pytest", "pytest-mock"]
+dev = ["nuitka", "pyfakefs", "pyright", "pytest"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
